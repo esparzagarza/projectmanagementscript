@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class TasksService {
 
   // replace your backend path here...
-  baseUri = "http://Backend/index.php";
+  baseUri = "http://PHPServerSide/index.php";
 
   
   allData: Task[] = [];
