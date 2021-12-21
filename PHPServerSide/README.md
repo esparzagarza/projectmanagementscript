@@ -11,14 +11,8 @@ Modules developed to the next
 =============================
 
   Dashboard                                 
-  Professional Template                     
+  MVC Architecture
   Unlimited Tasks                           
-  Directory center                          
-  Related Task to Other Modules             
-  Unlimited Projects                        
-  Unlimited Categories                      
-  Unlimited Stores                          
-  Users and Roles                           
 
 BackEnd Side: 
 -------------
