@@ -1,6 +1,6 @@
 ### About this App
 
--   A powerful tool for Task Management
+-   A powerful tool for Project/Task Management
 -   Easy coupling Script into Production Systems
 -   Programmed with clean code and maintainable functions
 -   Built-in unit test layer that verifies each function
@@ -13,12 +13,6 @@ Modules developed to the next
   Dashboard                                 
   Professional Template                     
   Unlimited Tasks                           
-  Directory center                          
-  Related Task to Other Modules             
-  Unlimited Projects                        
-  Unlimited Categories                      
-  Unlimited Stores                          
-  Users and Roles                           
 
 FrontEnd Side:
 --------------
@@ -34,7 +28,7 @@ FrontEnd Side:
 
 -- Move to your root project
 ```bash
-cd TMS/frontend
+cd PMS/frontend
 ```
 
 -- Change the baseUri variable inside: src/environments/environment.ts
@@ -49,7 +43,7 @@ npm install && ng serve
 ng serve
 ```
 
-# TaskManagementSystem
+# Project Management System
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
 
