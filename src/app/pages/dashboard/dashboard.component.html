@@ -1,0 +1,74 @@
+<div class="row g-9">
+    <div class="col-md-4 col-lg-12 col-xl-4" *ngIf="_tasksService.filteredData.started.length">
+        <div class="mb-9">
+            <div class="d-flex flex-stack">
+                <div class="fw-bolder fs-4">Started
+                    <span class="fs-6 text-gray-400 ms-2">{{ _tasksService.filteredData.started.length }}</span>
+                </div>
+            </div>
+            <div class="h-3px w-100 bg-warning"></div>
+        </div>
+        <div class="card mb-6 mb-xl-9" *ngFor="let item of _tasksService.filteredData.started">
+            <div [routerLink]="['/task', item.id]" class="card bgi-no-repeat card-xl-stretch mb-xl-8 cursor-pointer"
+                style="background-position: right top; background-size: 30% auto; background-image: url(assets/media/abstract-1.svg)">
+                <div class="card-body">
+                    <a href="#" class="card-title fw-bolder text-muted text-hover-primary fs-4">{{ item.name }}</a>
+                    <div class="fw-bolder text-primary my-6">{{ item.duedate }}</div>
+                    <p class="text-dark-75 fw-bold fs-5 m-0">{{ item.description.substring(0,40) }} </p>
+                    <div class="py-1">
+                        <span class="text-dark fs-1 fw-bolder me-2">{{ item.type }}</span>
+                        <span class="fw-bold text-muted fs-7">{{ item.prio }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-12 col-xl-4" *ngIf="_tasksService.filteredData.inprogress.length">
+        <div class="mb-9">
+            <div class="d-flex flex-stack">
+                <div class="fw-bolder fs-4">In Progress
+                    <span class="fs-6 text-gray-400 ms-2">{{ _tasksService.filteredData.inprogress.length }}</span>
+                </div>
+            </div>
+            <div class="h-3px w-100 bg-primary"></div>
+        </div>
+        <div class="card mb-6 mb-xl-9" *ngFor="let item of _tasksService.filteredData.inprogress">
+            <div [routerLink]="['/task', item.id]" class="card bgi-no-repeat card-xl-stretch mb-xl-8 cursor-pointer"
+                style="background-position: right top; background-size: 30% auto; background-image: url(assets/media/abstract-2.svg)">
+                <div class="card-body">
+                    <a href="#" class="card-title fw-bolder text-muted text-hover-primary fs-4">{{ item.name }}</a>
+                    <div class="fw-bolder text-primary my-6">{{ item.duedate }}</div>
+                    <p class="text-dark-75 fw-bold fs-5 m-0">{{ item.description.substring(0,40) }} </p>
+                    <div class="py-1">
+                        <span class="text-dark fs-1 fw-bolder me-2">{{ item.type }}</span>
+                        <span class="fw-bold text-muted fs-7">{{ item.prio }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-12 col-xl-4" *ngIf="_tasksService.filteredData.completed.length">
+        <div class="mb-9">
+            <div class="d-flex flex-stack">
+                <div class="fw-bolder fs-4">Completed
+                    <span class="fs-6 text-gray-400 ms-2">{{ _tasksService.filteredData.completed.length }}</span>
+                </div>
+            </div>
+            <div class="h-3px w-100 bg-success"></div>
+        </div>
+        <div class="card mb-6 mb-xl-9" *ngFor="let item of _tasksService.filteredData.completed">
+            <div [routerLink]="['/task', item.id]" class="card bgi-no-repeat card-xl-stretch mb-xl-8 cursor-pointer"
+                style="background-position: right top; background-size: 30% auto; background-image: url(assets/media/abstract-3.svg)">
+                <div class="card-body">
+                    <a href="#" class="card-title fw-bolder text-muted text-hover-primary fs-4">{{ item.name }}</a>
+                    <div class="fw-bolder text-primary my-6">{{ item.duedate }}</div>
+                    <p class="text-dark-75 fw-bold fs-5 m-0">{{ item.description.substring(0,40) }} </p>
+                    <div class="py-1">
+                        <span class="text-dark fs-1 fw-bolder me-2">{{ item.type }}</span>
+                        <span class="fw-bold text-muted fs-7">{{ item.prio }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

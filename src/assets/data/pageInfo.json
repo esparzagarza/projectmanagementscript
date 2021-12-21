@@ -1,0 +1,35 @@
+{
+    "title": "Task Management System",
+    "email": "developer@esparzagarza.mx",
+    "short_name": "ESPARZAGARZA",
+    "author_page": "https://esparzagarza.mx",
+    "linkedin": "https://www.linkedin.com/in/isc-pedroesparza",
+
+    "permittedTypes": [
+        { "key": "activity", "value": "Activity" },
+        { "key": "appointment", "value": "Appointment" },
+        { "key": "call", "value": "Call" },
+        { "key": "demo", "value": "Demo" },
+        { "key": "email", "value": "Email" },
+        { "key": "event", "value": "Event" },
+        { "key": "meet", "value": "Meet" },
+        { "key": "raise", "value": "Raise" },
+        { "key": "task", "value": "Task" },
+        { "key": "visit", "value": "Visit" }
+    ],
+
+    "permittedPrio" : [
+        { "key": "strict", "value": "Strict" },
+        { "key": "important", "value": "Important" },
+        { "key": "high", "value": "High" },
+        { "key": "medium", "value": "Medium" },
+        { "key": "low", "value": "Low" },
+        { "key": "wait", "value": "Wait" }
+      ],
+
+    "permittedStatus": [
+        {"key": "started", "value":"Started"},
+        {"key": "inprogress", "value":"In Progress"},
+        {"key": "completed", "value":"Completed"}
+    ]
+}

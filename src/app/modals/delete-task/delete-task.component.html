@@ -1,0 +1,63 @@
+<div class="modal fade" id="kt_modal_delete_task" tabindex="-1" aria-hidden="true" data-target="#modal">
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <div class="modal-content rounded">
+            <div class="modal-header pb-0 border-0 justify-content-end">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)"
+                                fill="black" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                <div class="mb-13 text-center">
+                    <h1 class="mb-3">Delete Task</h1>
+                    <div class="text-muted fw-bold fs-5" data-bs-dismiss="modal">If you need more info, please check
+                        <a routerLink="about" class="fw-bolder link-primary">About this App</a>.
+                    </div>
+                </div>
+                <div class="mh-475px scroll-y me-n7 pe-7">
+                    <div class="border border-hover-primary p-7 rounded mb-7">
+                        <div class="d-flex flex-stack pb-3">
+                            <div class="d-flex">
+                                <div class="ms-5">
+                                    <div class="d-flex align-items-center">
+                                        <a class="text-dark fw-bolder text-hover-primary fs-5 me-4">{{ editingTask.name
+                                            }}</a>
+                                    </div>
+                                    <span class="text-muted fw-bold mb-3">{{ editingTask.type }}</span>
+                                </div>
+                            </div>
+                            <div clas="d-flex">
+                                <div class="text-end pb-3">
+                                    <span class="text-dark fw-bolder fs-5">{{ editingTask.prio }}</span>
+                                    <span class="text-muted fs-7"> / {{ editingTask.status }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-0">
+                            <div class="d-flex flex-column">
+                                <p class="text-gray-700 fw-bold fs-6 mb-4"> {{ editingTask.description }}</p>
+                                <div class="d-flex text-gray-700 fw-bold fs-7">
+                                    <span class="border border-2 rounded me-3 p-1 px-2">Due Date {{
+                                        editingTask.duedate }}</span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="separator separator-dashed border-muted my-5"></div>
+                                <div class="d-flex flex-stack">
+                                    <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal"
+                                        (click)="deleteTask()">Say goodbye !</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

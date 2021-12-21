@@ -1,0 +1,112 @@
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+    <div class="card-header">
+        <div class="card-title m-0">
+            <h3 class="fw-bolder m-0">Task Details</h3>
+        </div>
+        <div class="card-title m-0 text-right">
+            <a data-bs-toggle="modal" data-bs-target="#kt_modal_delete_task" class="btn btn-warning">Delete Task</a>
+            &nbsp; 
+            <a data-bs-toggle="modal" data-bs-target="#kt_modal_edit_task" class="btn btn-primary">Edit Task</a>
+        </div>
+    </div>
+    <div class="card-body p-9">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Name</label>
+                    <div class="col-lg-8">
+                        <span class="fw-bolder fs-6 text-gray-800">{{ selectedTask.name }}</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Type</label>
+                    <div class="col-lg-8 fv-row">
+                        <span class="fw-bold text-gray-800 fs-6">{{ selectedTask.type }}</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Priority</label>
+                    <div class="col-lg-8 fv-row">
+                        <span class="fw-bold text-gray-800 fs-6">{{ selectedTask.prio }}</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Status</label>
+                    <div class="col-lg-8 fv-row">
+                        <span class="fw-bold text-gray-800 fs-6">{{ selectedTask.status }}</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Tags</label>
+                    <div class="col-lg-8 fv-row">
+                        <span class="fw-bold text-gray-800 fs-6">{{ selectedTask.tags }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Created</label>
+                    <div class="col-lg-8 fv-row">
+                        <span class="fw-bold text-gray-800 fs-6">{{ selectedTask.createdDT }}</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Due Date</label>
+                    <div class="col-lg-8 fv-row">
+                        <span class="fw-bold text-gray-800 fs-6">{{ selectedTask.duedate }}</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Description</label>
+                    <div class="col-lg-8 fv-row">
+                        <span class="fw-bold text-gray-800 fs-6">{{ selectedTask.description }}</span>
+                    </div>
+                </div>
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Notes</label>
+                    <div class="col-lg-8 fv-row">
+                        <span class="fw-bold text-gray-800 fs-6">{{ selectedTask.notes }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="overdue" class="notice d-flex bg-light-warning rounded border-warning border border-dashed p-6">
+            <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                    <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="black" />
+                    <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="black" />
+                </svg>
+            </span>
+            <div class="d-flex flex-stack flex-grow-1">
+                <div class="fw-bold">
+                    <h4 class="text-gray-900 fw-bolder">We need your attention!</h4>
+                    <div class="fs-6 text-gray-700">Your Due Date is overdue. To complete please
+                        <a class="fw-bolder" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_task">Edit Due
+                            Date</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!overdue" class="notice d-flex bg-light-success rounded border-success border border-dashed p-6">
+            <span class="svg-icon svg-icon-2tx svg-icon-success me-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+                    <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="black" />
+                    <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="black" />
+                </svg>
+            </span>
+            <div class="d-flex flex-stack flex-grow-1">
+                <div class="fw-bold">
+                    <span class="text-gray-900 fw-bolder">Due Date is coming soon!
+                        <a class="fw-bolder" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_task">Edit Due
+                            Date</a>.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-edit-task></app-edit-task>
+<app-delete-task></app-delete-task>

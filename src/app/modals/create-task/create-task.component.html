@@ -1,0 +1,104 @@
+<div class="modal fade" id="kt_modal_new_task" tabindex="-1" aria-hidden="true" data-target="#modal">
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <div class="modal-content rounded">
+            <div class="modal-header pb-0 border-0 justify-content-end">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)"
+                                fill="black" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                <form id="kt_modal_new_task_form" class="form" (ngSubmit)="saveForm(newTask)">
+                    <div class="mb-13 text-center">
+                        <h1 class="mb-3">Creat new Task</h1>
+                        <div class="text-muted fw-bold fs-5" data-bs-dismiss="modal">If you need more info, please check
+                            <a routerLink="about" class="fw-bolder link-primary">About this App</a>.
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span class="required">Task Name</span>
+                        </label>
+                        <input type="text" class="form-control form-control-solid" name="name" #name="ngModel"
+                            [(ngModel)]="newTask.name" required />
+                    </div>
+                    <div class="row g-9 mb-8">
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-bold mb-2">Type</label>
+                            <select class="form-select form-select-solid" data-hide-search="true"
+                                data-placeholder="Select Type" name="type" #name="ngModel" [(ngModel)]="newTask.type">
+                                <option *ngFor="let item of _pageInfoService.info.permittedTypes" [value]="item['key']">
+                                    {{ item['value'] }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-bold mb-2">Priority</label>
+                            <select class="form-select form-select-solid" data-hide-search="true"
+                                data-placeholder="Select a Priority" name="prio" #name="ngModel"
+                                [(ngModel)]="newTask.prio">
+                                <option *ngFor="let item of _pageInfoService.info.permittedPrio" [value]="item['key']">
+                                    {{ item['value'] }} </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-9 mb-8">
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-bold mb-2">Status</label>
+                            <select class="form-select form-select-solid" data-hide-search="true"
+                                data-placeholder="Select Status" name="status" #name="ngModel"
+                                [(ngModel)]="newTask.status">
+                                <option *ngFor="let item of _pageInfoService.info.permittedStatus"
+                                    [value]="item['key']">
+                                    {{ item['value'] }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-bold mb-2">Due Date</label>
+                            <input type="datetime-local" class="form-control form-control-solid"
+                                placeholder="Enter Due Date" name="duedate" #name="ngModel"
+                                [(ngModel)]="newTask.duedate" />
+                        </div>
+                    </div>
+                    <div class="row g-9 mb-8">
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-bold mb-2">Task Details</label>
+                            <textarea class="form-control form-control-solid" rows="3" name="description"
+                                #name="ngModel" [(ngModel)]="newTask.description"></textarea>
+                        </div>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-bold mb-2">Notes</label>
+                            <textarea class="form-control form-control-solid" rows="3" name="notes" #name="ngModel"
+                                [(ngModel)]="newTask.notes"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                            <span>Tags</span>
+                        </label>
+                        <input class="form-control form-control-solid" name="tags" #name="ngModel"
+                            [(ngModel)]="newTask.tags" />
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="kt_modal_new_task_cancel" class="btn btn-light me-3"
+                            (click)="startUp()">Reset</button>
+                        <button type="submit" id="kt_modal_new_task_submit" class="btn btn-primary"
+                            data-bs-dismiss="modal">
+                            <span class="indicator-label">Submit</span>
+                            <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
